@@ -1,3 +1,3 @@
-# JavaScript journey
+# My journey with JavaScript
 
-My  journey along with JS
+Will be Documenting things I'm doing here... let's see how will this later ends 😊
