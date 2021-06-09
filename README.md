@@ -1,2 +1,3 @@
-# JavaScript_journey
+# JavaScript journey
+
 My  journey along with JS
