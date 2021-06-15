@@ -1,12 +1,7 @@
-//Closures
-function makeMultiplier(multiplier) {
-    return (
-        function (x) {
-            return multiplier * x;
-        }
+//WHy we need Namespaces
 
-    );
-}
+// sayHello(); //prints Hello, Mo
+// sayHi(); //prints Hi, Mo
 
-var doubleMe = makeMultiplier(2);
-console.log(doubleMe(10));
+shifraGretter.sayHello();
+moGretter.sayHi();
