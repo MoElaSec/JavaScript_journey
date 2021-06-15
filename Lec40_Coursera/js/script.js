@@ -1,10 +1,20 @@
-function Circle(radius) {
-    this.radius = radius;
-}
-Circle.prototype.getArea = function() {
-    return Math.PI * this.radius ** 2;
-}
+var literalCircle = {
+    radius: 10,
 
-var myCircle = new Circle(10);
-// console.log(myCircle.getArea());
-console.log(myCircle);
+    getArea: function() {
+        var self = this; //now this doesn't refer to global window
+        console.log(this);
+
+        var increaseRadius = function () { //inner function
+            // this.radius = 20;
+            self.radius = 20;
+        };
+        increaseRadius();
+        console.log(this.radius);
+
+        return Math.PI * Math.pow(this.radius, 2);
+    }
+};
+
+// console.log(literalCircle);
+console.log(literalCircle.getArea());
