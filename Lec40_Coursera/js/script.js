@@ -1,14 +1,6 @@
-var message = "in global";
-console.log("global: message = " + message);
-
-var a = function () {
-    var message = "inside a";
-    console.log("a: message = " + message);
-    b();
+function Circle(radius) {
+    this.radius = radius;
 }
 
-var b = function () {
-    console.log("b: message = " + message);
-}
-
-a();
+var myCircle = new Circle(10);
+console.log(myCircle);
