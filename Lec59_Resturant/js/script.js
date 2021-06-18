@@ -54,6 +54,21 @@ $(function () {
         return string;
     };
 
+    // Remove the class 'active' from home and switch to Menu button
+    var switchMenuToActive = function () {
+        // Remove 'active' from home button
+        var classes = document.querySelector("#navHomeButton").className;
+        classes = classes.replace(new RegExp("active", "g"), "");
+        document.querySelector("#navHomeButton").className = classes;
+
+        // Add 'active' to menu button if not already there
+        classes = document.querySelector("#navMenuButton").className;
+        if (classes.indexOf("active") == -1) {
+            classes += " active";
+            document.querySelector("#navMenuButton").className = classes;
+        }
+    };
+
     // On page load (before images or CSS)
     document.addEventListener("DOMContentLoaded", function (event) {
         // On first load, show home view
@@ -95,6 +110,9 @@ $(function () {
                 $ajaxUtils.sendGetRequest(
                     categoryHtml,
                     function (categoryHtml) {
+                        // Switch CSS class active to menu button
+                        switchMenuToActive();
+
                         var categoriesViewHtml = buildCategoriesViewHtml(
                             categories,
                             categoriesTitleHtml,
@@ -145,6 +163,9 @@ $(function () {
                 $ajaxUtils.sendGetRequest(
                     menuItemHtml,
                     function (menuItemHtml) {
+                        // Switch CSS class active to menu button
+                        switchMenuToActive();
+
                         var menuItemsViewHtml = buildMenuItemsViewHtml(
                             categoryMenuItems,
                             menuItemsTitleHtml,
