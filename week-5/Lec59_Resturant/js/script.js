@@ -1,3 +1,4 @@
+// $ -> is the Jquery function ,, inside of it we pass function to use the lib
 $(function () {
     // Same as document.addEventListener("DOMContentLoaded"...
 
@@ -5,6 +6,7 @@ $(function () {
     $("#navbarToggle").blur(function (event) {
         var screenWidth = window.innerWidth;
         if (screenWidth < 768) {
+            // collapse is from bootstrap which based on JQuery so we must use it
             $("#collapsable-nav").collapse("hide");
         }
     });
